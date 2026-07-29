@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, MessageCircle, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { COMPANY_INFO } from '@/lib/data';
 
 export default function Navbar() {
@@ -35,16 +36,16 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Brand Logo */}
-          <a href="#" className="flex items-center gap-3 group" id="logo-link">
-            <div className="w-10 h-10 rounded-xl bg-[#C2FF01] flex items-center justify-center font-black text-[#1B1D21] text-xl shadow-[0_0_15px_rgba(194,255,1,0.4)] group-hover:scale-105 transition-transform">
-              T
-            </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-black tracking-wider text-white flex items-center gap-1.5">
-                TRINO
-                <span className="w-2 h-2 rounded-full bg-[#C2FF01] inline-block animate-pulse"></span>
-              </span>
+          {/* Brand Official Logo (Sin Pajarito) */}
+          <a href="#" className="flex items-center group" id="logo-link">
+            <div className="relative h-8 w-32 sm:h-10 sm:w-40">
+              <Image
+                src="/logo-header.png"
+                alt="TRINO Logo"
+                fill
+                className="object-contain object-left group-hover:scale-105 transition-transform duration-300"
+                priority
+              />
             </div>
           </a>
 
