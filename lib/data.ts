@@ -28,7 +28,7 @@ export interface PortfolioItem {
 
 export const COMPANY_INFO = {
   name: 'TRINO',
-  parentBrand: '',
+  parentBrand: 'Agencia Katarsis',
   slogan: 'Darle impulso al arte, ponerle alma a la gestión',
   manifesto:
     'Somos TRINO, una agencia de proyectos culturales que impulsa propuestas artísticas con foco en la gestión integral y las relaciones humanas, ordenando la operación y la estrategia para que crezcan de forma sostenible en el tiempo.',
@@ -179,17 +179,16 @@ export const PORTFOLIO: PortfolioItem[] = [
     badges: ['Neo-Bolero', 'Música Romántica Contemporánea'],
     category: 'musica',
     description:
-      'Referente en la renovación del bolero en Chile. Integrado por Gonzalo Anaís y Joaquín Mayer, el dúo fusiona la música latinoamericana con un lenguaje contemporáneo. Su disco debut "La amistad hecha bolero" fue nominado en 2026 a los Premios PULSAR como "Mejor Álbum de Balada o Música Romántica". Cuentan con 3 giras nacionales, internacionalización en Argentina y destaque en medios como La Tercera, El Mercurio y CNN.',
+      'Referente en la renovación del bolero y la música romántica contemporánea en Chile. Integrado por Gonzalo Anaís y Joaquín Mayer, el dúo fusiona la música latinoamericana con un sonido moderno y puesta en escena fresca. Su aclamado álbum debut "La amistad hecha bolero" fue nominado en 2026 a los Premios PULSAR como "Mejor Álbum de Balada o Música Romántica".',
     fullBio:
-      'GAMUZA ha revolucionado la escena con su elegancia melódica y poética cercana. Integrado por Gonzalo Anaís y Joaquín Mayer, combinan la intimidad acústica del guitarrón y la guitarra clásica con arreglos vocales exquisitos. Con su aclamado álbum debut "La amistad hecha bolero", conquistaron la crítica especializada con nominaciones estelares y constantes presentaciones a tablero vuelto.',
+      'GAMUZA reinterpreta el bolero y la música latinoamericana desde un lenguaje contemporáneo que conecta de inmediato con nuevas generaciones. Con 3 giras nacionales e internacionalización en Bariloche (Argentina), la agrupación ha sido destacada en medios de alta relevancia como La Tercera, El Mercurio, CNN y La Cuarta, proyectándose firmemente hacia el mercado latinoamericano.',
     highlights: [
-      'Nominado Premios PULSAR 2026 ("Mejor Álbum de Balada o Música Romántica")',
-      '3 Giras Nacionales y gira internacional por Argentina',
-      'Cobertura destacada en La Tercera, El Mercurio y CNN Chile',
+      'Nominación Premios PULSAR 2026 ("Mejor Álbum de Balada o Música Romántica")',
+      '3 Giras Nacionales y concierto internacional en Bariloche, Argentina',
+      'Prensa destacada en La Tercera, El Mercurio, CNN Chile y La Cuarta',
       'Álbum debut: "La amistad hecha bolero"',
     ],
-    image:
-      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop',
+    image: '/portfolio/gamuza.jpg',
     primaryColor: '#DCB8FE', // Lila
     secondaryColor: '#C2FF01', // Lime
   },
@@ -200,17 +199,16 @@ export const PORTFOLIO: PortfolioItem[] = [
     badges: ['Rap', 'G-Funk', 'Cultura Urbana'],
     category: 'urbano',
     description:
-      'Proyecto de rap y cultura urbana liderado por una emergente figura nacional. Con un sonido influenciado por el G-Funk, rescata rimas de la vieja escuela fusionadas con estilo urbano actual. Destaca por colaboraciones con referentes como C-Funk y SoloNacho, y una lírica que transita entre la nostalgia callejera y el romanticismo.',
+      'Proyecto de rap y cultura urbana liderado por una emergente figura nacional. Con un sonido profundamente influenciado por el G-Funk, rescata las rimas y ritmos de la vieja escuela para fusionarlos con el estilo urbano contemporáneo.',
     fullBio:
-      'Con un groove inconfundible marcado por sintetizadores analógicos, líneas de bajo pesadas y cadencia pausada pero potente, SIMPLEMENTE YO representa la frescura del hip-hop con raíces en el G-Funk costero y la poesía urbana santiaguina. Sus producciones han congregado a grandes leyendas de la escena nacional.',
+      'Ha ganado terreno rápidamente en el circuito en vivo gracias a destacadas colaboraciones con exponentes de la música chilena como SoloNacho y el histórico C-Funk. Su propuesta destaca por una lírica honesta que transita entre la nostalgia callejera y el romanticismo, posicionándose como una de las apuestas de nicho más refrescantes del país.',
     highlights: [
       'Sonido característico G-Funk & Old School moderno',
       'Featurings estelares con C-Funk y SoloNacho',
       'Lírica con identidad urbana, nostalgia y romanticismo callejero',
-      'Amplia presencia en eventos y festivales de música urbana',
+      'Catálogo oficial disponible en las principales plataformas digitales',
     ],
-    image:
-      'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1200&auto=format&fit=crop',
+    image: '/portfolio/simplemente-yo.jpg',
     primaryColor: '#FE4502', // Mandarina
     secondaryColor: '#C2FF01',
   },
@@ -221,17 +219,16 @@ export const PORTFOLIO: PortfolioItem[] = [
     badges: ['Rap Romántico', 'Dúo Urbano', 'Crowdfunding'],
     category: 'urbano',
     description:
-      'Nuevo dúo formado por Simplemente Yo y SoloNacho. Debut estelar con su sencillo "Dopamina", producido con beat de JDiller y distribuido por Trino vía Symphonic. El proyecto incluye lanzamiento de videoclip oficial, shows en vivo y una activa campaña de Crowdfunding para financiar su primer álbum LP.',
+      'Nuevo dúo chileno conformado por Simplemente Yo y SoloNacho. Debut oficial con su primer sencillo "Dopamina", distribuido bajo el alero de Trino a través de Symphonic, producido con beat de JDiller, mezcla de CrisMol y máster de Claudio Becerra.',
     fullBio:
-      'La unión de dos mentes líricas potentes de la escena nacional dio vida a LUR (Los Últimos Románticos CL). Su propuesta entrelaza cajas rítmicas profundas, melodías envolventes y una visión honesta del amor en tiempos modernos. Con el respaldo de Symphonic y la gestión integral de TRINO, preparan su esperado álbum debut.',
+      'LUR (Los Últimos Románticos CL) une a dos talentos independientes de la escena urbana. Su lanzamiento debut incluye un videoclip a cargo de DimePipe y By Famn, celebrado con un show en vivo en Kilombo. Durante este hito dieron el vamos a su campaña de Crowdfunding para acelerar el financiamiento de su futuro álbum de larga duración (LP).',
     highlights: [
-      'Sencillo debut "Dopamina" producido por JDiller',
+      'Sencillo debut "Dopamina" (Beat JDiller, Mezcla CrisMol, Master C. Becerra)',
       'Distribución global por Symphonic & Management por TRINO',
-      'Videoclip oficial de alto impacto estético y narrativo',
+      'Videoclip oficial realizado por DimePipe y By Famn',
       'Campaña activa de Crowdfunding para el lanzamiento de su álbum LP',
     ],
-    image:
-      'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop',
+    image: '/portfolio/lur.jpg',
     primaryColor: '#00BBFC', // Celeste
     secondaryColor: '#DCB8FE',
   },
@@ -242,17 +239,16 @@ export const PORTFOLIO: PortfolioItem[] = [
     badges: ['Pop Urbano', 'Reggaetón'],
     category: 'urbano',
     description:
-      'Cantante chilena oriunda de Colina. Destaca por su versatilidad vocal y ritmo fresco bailable con sencillos como "Quiero To", "Perreo Animal" y "La Última y Nos Vamos", disponibles en Spotify, Apple Music y YouTube.',
+      'Cantante chilena oriunda de Colina. Marca un hito en su carrera bajo el sello Katarsis Music con el lanzamiento de "Quiero To", destacando por un ritmo bailable y fresco que consolida su versatilidad lírica y evolución vocal.',
     fullBio:
-      'DENI LI es pura energía y talento vocal. Originaria de Colina, ha construido una sólida propuesta de pop urbano con carisma escénico y letras empoderadas. Sus shows en vivo son una explosión de coreografía, beats potentes y conexión inmediata con el público joven.',
+      'Tras hits previos como "Perreo Animal" y "La Última y Nos Vamos", DENI LI demuestra un crecimiento vocal constante y un carisma escénico único. Su catálogo completo y visualizers oficiales se encuentran disponibles en Spotify, Apple Music y YouTube.',
     highlights: [
-      'Hits destacados: "Quiero To", "Perreo Animal" y "La Última y Nos Vamos"',
-      'Proyecto estelar de pop urbano y reggaetón',
-      'Presencia en plataformas digitales: Spotify, Apple Music, YouTube',
-      'Shows en vivo con cuerpo de baile e impacto escénico',
+      'Nuevo sencillo "Quiero To" bajo el sello Katarsis Music',
+      'Hits destacados: "Perreo Animal" y "La Última y Nos Vamos"',
+      'Catálogo completo en Spotify, Apple Music y YouTube',
+      'Propuesta bailable y versátil en el pop urbano nacional',
     ],
-    image:
-      'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1200&auto=format&fit=crop',
+    image: '/portfolio/deni-li.jpg',
     primaryColor: '#DCB8FE', // Lila
     secondaryColor: '#FE4502',
   },
@@ -263,17 +259,16 @@ export const PORTFOLIO: PortfolioItem[] = [
     badges: ['Pianista', 'Multiinstrumentista', 'Docente'],
     category: 'instrumental',
     description:
-      'Pianista, arreglista y profesor de música egresado del Instituto Escuela Moderna. Docente e instructor en School of Rock Santiago y colaborador activo en diversos proyectos musicales de la escena nacional.',
+      'Pianista, multiinstrumentista y profesor de música egresado del Instituto Profesional Escuela Moderna de Música y Danza. Instructor de teclado y ensamblador en School of Rock Santiago y colaborador en diversos proyectos musicales.',
     fullBio:
-      'Con una formación técnica depurada e intuición compositiva versátil, Ennio Ramaciotti transita fluidamente entre la música académica, el jazz, la dirección musical y las producciones contemporáneas. Su labor pedagógica en School of Rock y sus participaciones en vivo lo ubican como un músico imprescindible en el circuito.',
+      'Además de su valiosa labor pedagógica guiando a bandas emergentes, Ennio Ramaciotti participa activamente en la escena nacional colaborando y tocando en vivo en diversos proyectos musicales de distintas sonoridades con una técnica limpia y versátil.',
     highlights: [
-      'Egresado del Instituto Escuela Moderna de Música',
-      'Docente e instructor en School of Rock Santiago',
-      'Arreglista y pianista de sesión para destacados artistas chilenos',
-      'Formato solista y ensambles instrumentales de cámara/jazz',
+      'Estudios en el IP Escuela Moderna de Música y Danza',
+      'Instructor de teclado y ensamblador en School of Rock Santiago',
+      'Músico de sesión y arreglista en múltiples proyectos nacionales',
+      'Trayectoria activa en interpretación en vivo y docencia',
     ],
-    image:
-      'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=1200&auto=format&fit=crop',
+    image: '/portfolio/ennio-ramaciotti.jpg',
     primaryColor: '#0044FD', // Azul Pop
     secondaryColor: '#C2FF01',
   },
@@ -284,17 +279,16 @@ export const PORTFOLIO: PortfolioItem[] = [
     badges: ['Teatro Familiar', 'Marionetas', 'Poesía Visual'],
     category: 'teatro',
     description:
-      'Obra de teatro familiar producida por la Compañía de Teatro Farolito. Utiliza teatro gestual, manipulación de marionetas y objetos para relatar la travesía de la famosa perrita de Moscú en el espacio, abordando la empatía y el sacrificio.',
+      'Emotiva obra de teatro familiar producida por la Compañía de Teatro Farolito. Utiliza teatro gestual, manipulación de marionetas y objetos para narrar la travesía de la famosa perrita callejera de Moscú que viajó al espacio.',
     fullBio:
-      'Una pieza escénica conmovedora que cautiva tanto a niños como adultos. A través de títeres articulados, iluminación tenue espacial y una delicada banda sonora original, "LAIKA" revisita la historia espacial con sensibilidad poética, invitando a reflexionar sobre la compasión, los lazos afectivos y los límites de la ciencia.',
+      'El montaje explora con poesía visual la relación entre Laika y su entrenador Oleg Gazenko. A través de una delicada manipulación técnica y trabajo escénico, aborda temas universales como la empatía, el sacrificio, el afecto y el progreso científico.',
     highlights: [
       'Producción oficial de la Compañía de Teatro Farolito',
-      'Teatro gestual, manipulación experta de marionetas y objetos',
-      'Formato ideal para centros culturales, teatros municipales y colegios',
-      'Temáticas universales: empatía, memoria, ciencia y afectos',
+      'Técnicas de teatro gestual, marionetas y trabajo con objetos',
+      'Relato poético centrado en la empatía, el sacrificio y la memoria',
+      'Formato ideal para salas de teatro, municipios y centros culturales',
     ],
-    image:
-      'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?q=80&w=1200&auto=format&fit=crop',
+    image: '/portfolio/laika.jpg',
     primaryColor: '#C2FF01', // Lime
     secondaryColor: '#00BBFC',
   },
