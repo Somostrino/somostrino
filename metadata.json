@@ -1,0 +1,6 @@
+{
+  "name": "Trino - Agencia de Gestión Cultural",
+  "description": "Agencia de gestión y management de proyectos culturales. Darle impulso al arte, ponerle alma a la gestión.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
