@@ -23,6 +23,12 @@
     overflow-x: hidden;
   }
 
+  /* Asignación de la fuente de títulos corporativa (Forager Bold Overlap) */
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-forager), var(--font-dm-sans), sans-serif;
+    letter-spacing: -0.01em;
+  }
+
   ::selection {
     background-color: #C2FF01;
     color: #1B1D21;
@@ -88,4 +94,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #C2FF01;
 }
-
