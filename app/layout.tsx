@@ -1,16 +1,19 @@
 import type { Metadata } from 'next';
-import { DM_Sans, Plus_Jakarta_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
+import { DM_Sans } from 'next/font/google';
 import './globals.css';
 
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  variable: '--font-dm-sans',
+// 1. Fuente local para Títulos (Forager Bold Overlap)
+const forager = localFont({
+  src: './fonts/Forager-BoldOverlap.ttf',
+  variable: '--font-forager',
   display: 'swap',
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+// 2. Fuente de Google para párrafos y lectura (DM Sans)
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-jakarta',
+  variable: '--font-dm-sans',
   display: 'swap',
 });
 
@@ -36,11 +39,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${dmSans.variable} ${plusJakartaSans.variable} scroll-smooth`}>
-      <body className="bg-[#1B1D21] text-white antialiased font-sans selection:bg-[#C2FF01] selection:text-[#1B1D21]" suppressHydrationWarning>
+    <html lang="es" className={`${dmSans.variable} ${forager.variable} scroll-smooth`}>
+      <body
+        className="bg-[#1B1D21] text-white antialiased font-sans selection:bg-[#C2FF01] selection:text-[#1B1D21]"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
   );
 }
-
