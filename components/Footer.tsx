@@ -82,9 +82,9 @@ export default function Footer() {
 
         {/* Footer Navigation & Brand Row */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 py-8 border-t border-b border-white/10 items-center">
-          {/* Brand Official Logo Image (Con Pajarito) & Tagline */}
+          {/* Brand Official Logo Image (Con Pajarito Agrandado) & Tagline */}
           <div className="md:col-span-5 space-y-3">
-            <div className="relative h-20 w-52 sm:h-24 sm:w-64">
+            <div className="relative h-28 w-72 sm:h-36 sm:w-96">
               <Image
                 src="/logo-footer.png"
                 alt="TRINO logo"
