@@ -4,10 +4,15 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { PORTFOLIO, PortfolioItem, COMPANY_INFO } from '@/lib/data';
-import { Sparkles, Music, Star, Award, ExternalLink, X, MessageCircle, ArrowRight, Disc, Play } from 'lucide-react';
+import { Sparkles, Star, Award, ExternalLink, X, MessageCircle, ArrowRight, Disc } from 'lucide-react';
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
+
+  const handleImageError = (projectId: string) => {
+    setImageErrors((prev) => ({ ...prev, [projectId]: true }));
+  };
 
   const filteredPortfolio = PORTFOLIO;
 
@@ -33,91 +38,105 @@ export default function Portfolio() {
 
         {/* Portfolio Cards Grid */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredPortfolio.map((project, idx) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="group relative bg-[#23262D] rounded-3xl overflow-hidden border border-white/10 hover:border-[#C2FF01]/60 transition-all duration-300 flex flex-col justify-between cursor-pointer hover:shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
-              onClick={() => setSelectedProject(project)}
-            >
-              {/* Image Container with Dark Gradient Overlay */}
-              <div className="relative h-64 sm:h-72 w-full overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#23262D] via-[#23262D]/60 to-transparent" />
+          {filteredPortfolio.map((project, idx) => {
+            const hasError = imageErrors[project.id];
 
-                {/* Top Badge Overlay */}
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                  <span className="text-[10px] uppercase font-mono font-bold tracking-wider px-2.5 py-1 rounded-md bg-[#1B1D21]/90 backdrop-blur-md text-white border border-white/10">
-                    TRINO MANAGEMENT
-                  </span>
-                  <div className="w-8 h-8 rounded-full bg-[#1B1D21]/80 backdrop-blur-md flex items-center justify-center text-slate-300 group-hover:text-[#C2FF01] group-hover:bg-[#1B1D21] transition-colors border border-white/10">
-                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" />
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                className="group relative bg-[#23262D] rounded-3xl overflow-hidden border border-white/10 hover:border-[#C2FF01]/60 transition-all duration-300 flex flex-col justify-between cursor-pointer hover:shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
+                onClick={() => setSelectedProject(project)}
+              >
+                {/* Image Container with Dark Gradient Overlay */}
+                <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-[#1B1D21]">
+                  {!hasError ? (
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={() => handleImageError(project.id)}
+                    />
+                  ) : (
+                    /* Fallback visual cuando la imagen no está disponible */
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-[#1B1D21] via-[#23262D] to-[#0044FD]/20 p-6 text-center">
+                      <Disc className="w-12 h-12 text-[#C2FF01] mb-2 animate-pulse" />
+                      <span className="text-xl font-black text-white">{project.name}</span>
+                      <span className="text-xs text-slate-400 mt-1">Trino Portfolio</span>
+                    </div>
+                  )}
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#23262D] via-[#23262D]/60 to-transparent" />
+
+                  {/* Top Badge Overlay */}
+                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                    <span className="text-[10px] uppercase font-mono font-bold tracking-wider px-2.5 py-1 rounded-md bg-[#1B1D21]/90 backdrop-blur-md text-white border border-white/10">
+                      TRINO MANAGEMENT
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-[#1B1D21]/80 backdrop-blur-md flex items-center justify-center text-slate-300 group-hover:text-[#C2FF01] group-hover:bg-[#1B1D21] transition-colors border border-white/10">
+                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" />
+                    </div>
+                  </div>
+
+                  {/* Title overlay on image bottom */}
+                  <div className="absolute bottom-3 left-4 right-4">
+                    <h3 className="text-2xl font-black text-white group-hover:text-[#C2FF01] transition-colors flex items-center gap-2">
+                      {project.name}
+                    </h3>
+                    <p className="text-xs text-slate-300 font-medium">
+                      {project.artistSub}
+                    </p>
                   </div>
                 </div>
 
-                {/* Title overlay on image bottom */}
-                <div className="absolute bottom-3 left-4 right-4">
-                  <h3 className="text-2xl font-black text-white group-hover:text-[#C2FF01] transition-colors flex items-center gap-2">
-                    {project.name}
-                  </h3>
-                  <p className="text-xs text-slate-300 font-medium">
-                    {project.artistSub}
+                {/* Card Body */}
+                <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                  {/* Discipline Badges */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.badges.map((badge) => (
+                      <span
+                        key={badge}
+                        className="px-2.5 py-1 rounded-full text-xs font-bold"
+                        style={{
+                          backgroundColor: project.primaryColor ? `${project.primaryColor}20` : '#C2FF0120',
+                          color: project.primaryColor || '#C2FF01',
+                          border: `1px solid ${project.primaryColor ? `${project.primaryColor}40` : '#C2FF0140'}`,
+                        }}
+                      >
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-sm text-slate-300 leading-relaxed line-clamp-3">
+                    {project.description}
                   </p>
-                </div>
-              </div>
 
-              {/* Card Body */}
-              <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
-                {/* Discipline Badges */}
-                <div className="flex flex-wrap gap-1.5">
-                  {project.badges.map((badge) => (
-                    <span
-                      key={badge}
-                      className="px-2.5 py-1 rounded-full text-xs font-bold"
-                      style={{
-                        backgroundColor: `${project.primaryColor}20`,
-                        color: project.primaryColor,
-                        border: `1px solid ${project.primaryColor}40`,
-                      }}
-                    >
-                      {badge}
-                    </span>
-                  ))}
-                </div>
+                  {/* Highlights List preview */}
+                  <div className="pt-3 border-t border-white/10 space-y-1.5">
+                    {project.highlights.slice(0, 2).map((hl, i) => (
+                      <div key={i} className="flex items-center gap-2 text-xs text-slate-300 truncate">
+                        <Star className="w-3.5 h-3.5 text-[#C2FF01] shrink-0" />
+                        <span className="truncate">{hl}</span>
+                      </div>
+                    ))}
+                  </div>
 
-                {/* Description */}
-                <p className="text-sm text-slate-300 leading-relaxed line-clamp-3">
-                  {project.description}
-                </p>
-
-                {/* Highlights List preview */}
-                <div className="pt-3 border-t border-white/10 space-y-1.5">
-                  {project.highlights.slice(0, 2).map((hl, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-slate-300 truncate">
-                      <Star className="w-3.5 h-3.5 text-[#C2FF01] shrink-0" />
-                      <span className="truncate">{hl}</span>
-                    </div>
-                  ))}
+                  {/* Action button */}
+                  <div className="pt-2 text-xs font-bold text-[#C2FF01] flex items-center justify-between group-hover:underline">
+                    <span>Ver Ficha Completa & Booking</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </div>
                 </div>
-
-                {/* Action button */}
-                <div className="pt-2 text-xs font-bold text-[#C2FF01] flex items-center justify-between group-hover:underline">
-                  <span>Ver Ficha Completa & Booking</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 
@@ -132,14 +151,21 @@ export default function Portfolio() {
               className="bg-[#23262D] rounded-3xl max-w-3xl w-full border border-[#C2FF01]/40 shadow-2xl overflow-hidden text-white relative my-8"
             >
               {/* Top Banner Image */}
-              <div className="relative h-64 sm:h-80 w-full">
-                <Image
-                  src={selectedProject.image}
-                  alt={selectedProject.name}
-                  fill
-                  className="object-cover"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="relative h-64 sm:h-80 w-full bg-[#1B1D21]">
+                {!imageErrors[selectedProject.id] ? (
+                  <Image
+                    src={selectedProject.image}
+                    alt={selectedProject.name}
+                    fill
+                    className="object-cover"
+                    onError={() => handleImageError(selectedProject.id)}
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-[#1B1D21] via-[#23262D] to-[#0044FD]/30 p-6 text-center">
+                    <Disc className="w-16 h-16 text-[#C2FF01] mb-2 animate-pulse" />
+                    <span className="text-3xl font-black text-white">{selectedProject.name}</span>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#23262D] via-[#23262D]/50 to-transparent" />
 
                 <button
