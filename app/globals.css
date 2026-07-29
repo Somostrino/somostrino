@@ -23,10 +23,11 @@
     overflow-x: hidden;
   }
 
-  /* Asignación de la fuente de títulos corporativa (Forager Bold Overlap) */
+  /* Asignación global de Forager + Fuerza Mayúsculas automáticas */
   h1, h2, h3, h4, h5, h6, .font-heading {
     font-family: var(--font-forager), var(--font-dm-sans), sans-serif;
-    letter-spacing: -0.01em;
+    text-transform: uppercase; /* <-- Transforma todo a MAYÚSCULAS en el sitio */
+    letter-spacing: 0.01em;
   }
 
   ::selection {
