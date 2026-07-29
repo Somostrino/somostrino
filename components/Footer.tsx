@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'motion/react';
+import Image from 'next/image';
 import { COMPANY_INFO } from '@/lib/data';
 import { Mail, MessageCircle, Copy, Check, ArrowUp, Sparkles, ExternalLink } from 'lucide-react';
 
@@ -43,7 +43,7 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-              {/* WhatsApp Button (Radiant Lime #C2FF01 with Dark Text #1B1D21) */}
+              {/* WhatsApp Button */}
               <a
                 href={COMPANY_INFO.whatsappUrl}
                 target="_blank"
@@ -82,13 +82,16 @@ export default function Footer() {
 
         {/* Footer Navigation & Brand Row */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 py-8 border-t border-b border-white/10 items-center">
-          {/* Brand Logo & Tagline */}
-          <div className="md:col-span-5 space-y-2">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#C2FF01] flex items-center justify-center font-black text-[#1B1D21] text-lg">
-                T
-              </div>
-              <span className="text-2xl font-black tracking-wider text-white">TRINO</span>
+          {/* Brand Official Logo Image (Con Pajarito) & Tagline */}
+          <div className="md:col-span-5 space-y-3">
+            <div className="relative h-20 w-52 sm:h-24 sm:w-64">
+              <Image
+                src="/logo-footer.png"
+                alt="TRINO logo"
+                fill
+                className="object-contain object-left"
+                priority
+              />
             </div>
             <p className="text-sm font-medium text-[#C2FF01] italic">
               &ldquo;{COMPANY_INFO.slogan}&rdquo;
