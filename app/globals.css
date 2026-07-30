@@ -23,12 +23,12 @@
     overflow-x: hidden;
   }
 
-  /* Asignación global de Forager + Mayúsculas + Espaciado de letras ampliado */
+  /* Forzado Global para la fuente Forager en Títulos con 0.06em */
   h1, h2, h3, h4, h5, h6, .font-heading {
-    font-family: var(--font-forager), var(--font-dm-sans), sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.12em; /* Ampliado para que cada letra respire */
-    word-spacing: 0.2em;    /* Intacto */
+    font-family: var(--font-forager), var(--font-dm-sans), sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important; /* Despega las letras en TODOS los títulos (anula tracking-tight) */
+    word-spacing: 0.18em !important;   /* Mantiene las palabras separadas de forma limpia */
   }
 
   ::selection {
