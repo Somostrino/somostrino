@@ -23,11 +23,12 @@
     overflow-x: hidden;
   }
 
-  /* Asignación global de Forager + Fuerza Mayúsculas automáticas */
+  /* Asignación global de Forager + Mayúsculas + Espaciado de letras y palabras */
   h1, h2, h3, h4, h5, h6, .font-heading {
     font-family: var(--font-forager), var(--font-dm-sans), sans-serif;
-    text-transform: uppercase; /* <-- Transforma todo a MAYÚSCULAS en el sitio */
-    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em; /* Espaciado entre letras (Equivalente al ~20-30 de Canva) */
+    word-spacing: 0.2em;    /* Separa las palabras entre sí para que sean legibles */
   }
 
   ::selection {
