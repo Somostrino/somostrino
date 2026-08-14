@@ -294,14 +294,26 @@ export default function EventosPage() {
                   <button
                     key={evento.id}
                     onClick={() => setSelectedEvento(evento)}
-                    className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#23262D] border-2 border-[#C2FF01]/50 hover:border-[#C2FF01] transition-all duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(194,255,1,0.3)] hover:-translate-y-1 text-left cursor-pointer"
+                    className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#1B1D21] border-2 border-[#C2FF01]/50 hover:border-[#C2FF01] transition-all duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(194,255,1,0.3)] hover:-translate-y-1 text-left cursor-pointer"
                   >
+                    {/* Fondo difuminado dinámico con los colores de la propia imagen */}
                     <Image
                       src={evento.image}
-                      alt={evento.title}
+                      alt=""
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover blur-xl opacity-50 scale-125 pointer-events-none"
                     />
+
+                    {/* Imagen principal completa sin recortar */}
+                    <div className="relative w-full h-full p-1.5">
+                      <Image
+                        src={evento.image}
+                        alt={evento.title}
+                        fill
+                        className="object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+
                     <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
                   </button>
                 ))}
@@ -324,15 +336,27 @@ export default function EventosPage() {
                   <button
                     key={evento.id}
                     onClick={() => setSelectedEvento(evento)}
-                    className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#23262D] border border-white/10 hover:border-[#C2FF01]/50 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(194,255,1,0.15)] hover:-translate-y-1 text-left cursor-pointer opacity-85 hover:opacity-100"
+                    className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#1B1D21] border border-white/10 hover:border-[#C2FF01]/50 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(194,255,1,0.15)] hover:-translate-y-1 text-left cursor-pointer opacity-85 hover:opacity-100"
                   >
+                    {/* Fondo difuminado dinámico con los colores de la propia imagen */}
                     <Image
                       src={evento.image}
-                      alt={evento.title}
+                      alt=""
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover blur-xl opacity-40 scale-125 pointer-events-none"
                     />
-                    <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors" />
+
+                    {/* Imagen principal completa sin recortar */}
+                    <div className="relative w-full h-full p-1.5">
+                      <Image
+                        src={evento.image}
+                        alt={evento.title}
+                        fill
+                        className="object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                   </button>
                 ))}
               </div>
@@ -362,13 +386,21 @@ export default function EventosPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
               {/* Afiche en el Modal */}
-              <div className="sm:col-span-5 relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+              <div className="sm:col-span-5 relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-[#1B1D21]">
                 <Image
                   src={selectedEvento.image}
-                  alt={selectedEvento.title}
+                  alt=""
                   fill
-                  className="object-cover"
+                  className="object-cover blur-xl opacity-50 scale-125 pointer-events-none"
                 />
+                <div className="relative w-full h-full p-2">
+                  <Image
+                    src={selectedEvento.image}
+                    alt={selectedEvento.title}
+                    fill
+                    className="object-contain drop-shadow-md"
+                  />
+                </div>
               </div>
 
               {/* Información del Evento */}
