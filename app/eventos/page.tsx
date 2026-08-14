@@ -10,10 +10,11 @@ interface Evento {
   id: string;
   title: string;
   date: string;
-  isoDate: string; // Fecha en formato ISO para filtrado automático
+  isoDate: string; // Fecha ISO para filtrado automático
   description: string;
   link: string;
   image: string;
+  customUrl?: string; // Enlace a subpágina propia (si aplica)
 }
 
 const EVENTOS_LIST: Evento[] = [
@@ -25,6 +26,7 @@ const EVENTOS_LIST: Evento[] = [
     description: 'Un concierto íntimo de películas de Disney en formato piano y voz junto a Ennio Ramaciotti y Agustina Sepúlveda.',
     link: 'https://www.portaldisc.com/evento/tarde-de-pelicula',
     image: '/eventos/afiche-tarde-de-pelicula.jpg',
+    customUrl: '/eventos/tarde-de-pelicula', // <-- Redirige a su subpágina dedicada
   },
   {
     id: 'gamuza-otra-noche-3',
@@ -256,18 +258,66 @@ const EVENTOS_LIST: Evento[] = [
 export default function EventosPage() {
   const [selectedEvento, setSelectedEvento] = useState<Evento | null>(null);
 
-  // Filtrado automático según la fecha actual del usuario
+  // Filtrado automático según la fecha actual
   const now = new Date();
 
-  // Próximos eventos (ordenados del más cercano al más lejano)
+  // Próximos eventos
   const proximosEventos = EVENTOS_LIST
     .filter((e) => new Date(e.isoDate) >= now)
     .sort((a, b) => new Date(a.isoDate).getTime() - new Date(b.isoDate).getTime());
 
-  // Eventos pasados (ordenados del más reciente al más antiguo)
+  // Eventos pasados
   const eventosPasados = EVENTOS_LIST
     .filter((e) => new Date(e.isoDate) < now)
     .sort((a, b) => new Date(b.isoDate).getTime() - new Date(a.isoDate).getTime());
+
+  // Función para renderizar cada tarjeta (link o modal)
+  const renderCard = (evento: Evento, isUpcoming: boolean) => {
+    const borderClass = isUpcoming 
+      ? 'border-2 border-[#C2FF01]/50 hover:border-[#C2FF01] shadow-xl hover:shadow-[0_0_30px_rgba(194,255,1,0.3)]'
+      : 'border border-white/10 hover:border-[#C2FF01]/50 shadow-lg hover:shadow-[0_0_20px_rgba(194,255,1,0.15)] opacity-85 hover:opacity-100';
+
+    const cardContent = (
+      <>
+        {/* Fondo difuminado dinámico */}
+        <Image
+          src={evento.image}
+          alt=""
+          fill
+          className="object-cover blur-xl opacity-50 scale-125 pointer-events-none"
+        />
+
+        {/* Imagen principal completa */}
+        <div className="relative w-full h-full p-1.5">
+          <Image
+            src={evento.image}
+            alt={evento.title}
+            fill
+            className="object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
+      </>
+    );
+
+    const commonClasses = `group relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#1B1D21] ${borderClass} transition-all duration-300 hover:-translate-y-1 text-left cursor-pointer block`;
+
+    // Si tiene subpágina propia redirige, si no, abre el modal
+    if (evento.customUrl) {
+      return (
+        <a key={evento.id} href={evento.customUrl} className={commonClasses}>
+          {cardContent}
+        </a>
+      );
+    }
+
+    return (
+      <button key={evento.id} onClick={() => setSelectedEvento(evento)} className={commonClasses}>
+        {cardContent}
+      </button>
+    );
+  };
 
   return (
     <div className="bg-[#1B1D21] text-white min-h-screen selection:bg-[#C2FF01] selection:text-[#1B1D21]">
@@ -290,33 +340,7 @@ export default function EventosPage() {
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                {proximosEventos.map((evento) => (
-                  <button
-                    key={evento.id}
-                    onClick={() => setSelectedEvento(evento)}
-                    className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#1B1D21] border-2 border-[#C2FF01]/50 hover:border-[#C2FF01] transition-all duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(194,255,1,0.3)] hover:-translate-y-1 text-left cursor-pointer"
-                  >
-                    {/* Fondo difuminado dinámico con los colores de la propia imagen */}
-                    <Image
-                      src={evento.image}
-                      alt=""
-                      fill
-                      className="object-cover blur-xl opacity-50 scale-125 pointer-events-none"
-                    />
-
-                    {/* Imagen principal completa sin recortar */}
-                    <div className="relative w-full h-full p-1.5">
-                      <Image
-                        src={evento.image}
-                        alt={evento.title}
-                        fill
-                        className="object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
-                  </button>
-                ))}
+                {proximosEventos.map((e) => renderCard(e, true))}
               </div>
             </section>
           )}
@@ -332,33 +356,7 @@ export default function EventosPage() {
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                {eventosPasados.map((evento) => (
-                  <button
-                    key={evento.id}
-                    onClick={() => setSelectedEvento(evento)}
-                    className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#1B1D21] border border-white/10 hover:border-[#C2FF01]/50 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(194,255,1,0.15)] hover:-translate-y-1 text-left cursor-pointer opacity-85 hover:opacity-100"
-                  >
-                    {/* Fondo difuminado dinámico con los colores de la propia imagen */}
-                    <Image
-                      src={evento.image}
-                      alt=""
-                      fill
-                      className="object-cover blur-xl opacity-40 scale-125 pointer-events-none"
-                    />
-
-                    {/* Imagen principal completa sin recortar */}
-                    <div className="relative w-full h-full p-1.5">
-                      <Image
-                        src={evento.image}
-                        alt={evento.title}
-                        fill
-                        className="object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                  </button>
-                ))}
+                {eventosPasados.map((e) => renderCard(e, false))}
               </div>
             </section>
           )}
@@ -366,7 +364,7 @@ export default function EventosPage() {
         </div>
       </main>
 
-      {/* Pop-up Modal al hacer clic en un afiche */}
+      {/* Pop-up Modal para eventos estándar */}
       {selectedEvento && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
