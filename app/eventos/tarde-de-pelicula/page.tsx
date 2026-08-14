@@ -12,7 +12,8 @@ import {
   ExternalLink, 
   Info, 
   Volume2,
-  CheckCircle2
+  CheckCircle2,
+  Play
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -47,11 +48,12 @@ const EVENT_DATA = {
       popular: true,
     },
   ],
+  // Repertorio solo con imágenes PNG
   repertoire: [
-    { title: 'Hércules', icon: '⚡' },
-    { title: 'Mulán', icon: '🌸' },
-    { title: 'Tarzán', icon: '🌿' },
-    { title: 'El Jorobado de Notre Dame', icon: '🔔' },
+    { title: 'Hércules', image: '/eventos/repertorio/hercules.png' },
+    { title: 'Mulán', image: '/eventos/repertorio/mulan.png' },
+    { title: 'Tarzán', image: '/eventos/repertorio/tarzan.png' },
+    { title: 'El Jorobado de Notre Dame', image: '/eventos/repertorio/notre-dame.png' },
   ],
   videos: [
     { id: 1, src: '/videos/ennio-1.mp4', title: 'Ensayo en Piano' },
@@ -156,7 +158,7 @@ export default function EventoPage() {
               </div>
             </div>
 
-            {/* Columna Derecha: Afiche Oficial en Alta Resolución */}
+            {/* Columna Derecha: Afiche Oficial */}
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative w-full max-w-md rounded-3xl overflow-hidden border-2 border-[#C2FF01]/40 shadow-[0_0_50px_rgba(0,0,0,0.8)] bg-[#23262D] group">
                 <Image
@@ -172,7 +174,7 @@ export default function EventoPage() {
 
           </div>
 
-          {/* Reseña & Repertorio */}
+          {/* Reseña & Repertorio (Sólo Íconos PNG) */}
           <div className="bg-[#23262D] rounded-3xl p-8 sm:p-12 border border-white/10 space-y-8">
             <div className="max-w-3xl space-y-4">
               <h2 className="text-2xl sm:text-4xl font-black text-white">
@@ -183,27 +185,34 @@ export default function EventoPage() {
               </p>
             </div>
 
-            {/* Grid de Películas / Repertorio */}
+            {/* Grid de Íconos de Películas sin texto */}
             <div>
-              <h3 className="text-xs font-bold text-[#C2FF01] uppercase tracking-wider mb-4 flex items-center gap-2">
+              <h3 className="text-xs font-bold text-[#C2FF01] uppercase tracking-wider mb-6 flex items-center gap-2">
                 <Music2 className="w-4 h-4" />
                 <span>Repertorio Destacado</span>
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center justify-items-center">
                 {EVENT_DATA.repertoire.map((item) => (
                   <div
                     key={item.title}
-                    className="p-4 rounded-2xl bg-[#1B1D21] border border-white/10 flex items-center gap-3 text-sm font-bold text-white"
+                    className="p-6 rounded-3xl bg-[#1B1D21] border border-white/10 hover:border-[#C2FF01]/50 transition-all flex items-center justify-center w-full h-36 relative group shadow-lg"
+                    title={item.title}
                   >
-                    <span className="text-2xl">{item.icon}</span>
-                    <span>{item.title}</span>
+                    <div className="relative w-28 h-28">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Galería de Videos Verticales (Smartphone 9:16) */}
+          {/* Galería de Videos Verticales con Botón PLAY destacado */}
           <div className="space-y-6">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#23262D] text-[#C2FF01] text-xs font-bold uppercase">
@@ -214,11 +223,11 @@ export default function EventoPage() {
                 Conoce el Arte de Ennio Ramaciotti
               </h2>
               <p className="text-sm text-slate-400">
-                Echa un vistazo a la calidad técnica e interpretación en formato íntimo.
+                Haz clic en el botón de reproducción para ver el video.
               </p>
             </div>
 
-            {/* Grid de Videos en formato 9:16 */}
+            {/* Grid de Videos en formato 9:16 con Play Overlay */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {EVENT_DATA.videos.map((vid) => (
                 <div
@@ -228,12 +237,16 @@ export default function EventoPage() {
                   <video
                     src={vid.src}
                     controls
+                    preload="metadata"
                     playsInline
                     className="w-full h-full object-cover"
-                    poster={EVENT_DATA.posterImage}
                   />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none">
-                    <span className="text-xs font-bold text-white">{vid.title}</span>
+                  
+                  {/* Badge con Título del Video */}
+                  <div className="absolute top-4 left-4 right-4 pointer-events-none">
+                    <span className="text-[10px] font-bold text-white uppercase tracking-wider px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10">
+                      {vid.title}
+                    </span>
                   </div>
                 </div>
               ))}
