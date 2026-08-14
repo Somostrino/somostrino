@@ -24,7 +24,7 @@ export default function Navbar() {
     { name: 'Servicios', href: '/#servicios' },
     { name: 'Portafolio', href: '/#portafolio' },
     { name: 'Experiencias', href: '/#experiencias' },
-    { name: 'Eventos', href: '/eventos/tarde-de-pelicula' },
+    { name: 'Eventos', href: '/eventos' },
     { name: 'Contacto', href: '/#contacto' },
   ];
 
