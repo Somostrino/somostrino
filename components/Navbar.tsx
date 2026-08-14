@@ -23,6 +23,7 @@ export default function Navbar() {
     { name: 'Quiénes Somos', href: '/#quienes-somos' },
     { name: 'Servicios', href: '/#servicios' },
     { name: 'Portafolio', href: '/#portafolio' },
+    { name: 'Experiencias', href: '/#experiencias' },
     { name: 'Eventos', href: '/eventos/tarde-de-pelicula' },
     { name: 'Contacto', href: '/#contacto' },
   ];
