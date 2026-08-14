@@ -1,8 +1,6 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { 
   Calendar, 
   Clock, 
@@ -75,13 +73,13 @@ export default function EventoPage() {
           
           {/* Botón Volver */}
           <div>
-            <Link
+            <a
               href="/"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#23262D] border border-white/10 text-slate-300 hover:text-[#C2FF01] hover:border-[#C2FF01]/40 transition-all text-xs font-bold uppercase tracking-wider"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Volver a Trino</span>
-            </Link>
+            </a>
           </div>
 
           {/* Hero del Evento */}
