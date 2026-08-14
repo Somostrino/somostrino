@@ -15,6 +15,7 @@ export interface PortfolioItem {
   name: string;
   artistSub: string;
   badges: string[];
+  serviceType?: 'TRINO MANAGEMENT' | 'TRINO BOOKING';
   category: 'musica' | 'urbano' | 'teatro' | 'instrumental';
   description: string;
   fullBio: string;
@@ -177,6 +178,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     name: 'GAMUZA',
     artistSub: 'Dúo de Neo-Bolero & Balada Romántica',
     badges: ['Neo-Bolero', 'Música Romántica Contemporánea'],
+    serviceType: 'TRINO MANAGEMENT',
     category: 'musica',
     description:
       'Referente en la renovación del bolero y la música romántica contemporánea en Chile. Integrado por Gonzalo Anaís y Joaquín Mayer, el dúo fusiona la música latinoamericana con un sonido moderno y puesta en escena fresca. Su aclamado álbum debut "La amistad hecha bolero" fue nominado en 2026 a los Premios PULSAR como "Mejor Álbum de Balada o Música Romántica".',
@@ -197,6 +199,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     name: 'SIMPLEMENTE YO',
     artistSub: 'Proyecto de Rap & Cultura Urbana',
     badges: ['Rap', 'G-Funk', 'Cultura Urbana'],
+    serviceType: 'TRINO MANAGEMENT',
     category: 'urbano',
     description:
       'Proyecto de rap y cultura urbana liderado por una emergente figura nacional. Con un sonido profundamente influenciado por el G-Funk, rescata las rimas y ritmos de la vieja escuela para fusionarlos con el estilo urbano contemporáneo.',
@@ -217,6 +220,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     name: 'LUR (Los Últimos Románticos CL)',
     artistSub: 'Dúo Urbano & Rap Romántico',
     badges: ['Rap Romántico', 'Dúo Urbano', 'Crowdfunding'],
+    serviceType: 'TRINO MANAGEMENT',
     category: 'urbano',
     description:
       'Nuevo dúo chileno conformado por Simplemente Yo y SoloNacho. Debut oficial con su primer sencillo "Dopamina", distribuido bajo el alero de Trino a través de Symphonic, producido con beat de JDiller, mezcla de CrisMol y máster de Claudio Becerra.',
@@ -237,6 +241,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     name: 'DENI LI',
     artistSub: 'Cantante de Pop Urbano & Reggaetón',
     badges: ['Pop Urbano', 'Reggaetón'],
+    serviceType: 'TRINO MANAGEMENT',
     category: 'urbano',
     description:
       'Cantante chilena oriunda de Colina. Marca un hito en su carrera bajo el sello Katarsis Music con el lanzamiento de "Quiero To", destacando por un ritmo bailable y fresco que consolida su versatilidad lírica y evolución vocal.',
@@ -257,6 +262,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     name: 'ENNIO RAMACIOTTI',
     artistSub: 'Pianista, Multiinstrumentista & Docente',
     badges: ['Pianista', 'Multiinstrumentista', 'Docente'],
+    serviceType: 'TRINO BOOKING',
     category: 'instrumental',
     description:
       'Pianista, multiinstrumentista y profesor de música egresado del Instituto Profesional Escuela Moderna de Música y Danza. Instructor de teclado y ensamblador en School of Rock Santiago y colaborador en diversos proyectos musicales.',
@@ -277,6 +283,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     name: 'LAIKA (Historia de una estrella fugaz)',
     artistSub: 'Obra de Teatro Familiar & Puppetry',
     badges: ['Teatro Familiar', 'Marionetas', 'Poesía Visual'],
+    serviceType: 'TRINO BOOKING',
     category: 'teatro',
     description:
       'Emotiva obra de teatro familiar producida por la Compañía de Teatro Farolito. Utiliza teatro gestual, manipulación de marionetas y objetos para narrar la travesía de la famosa perrita callejera de Moscú que viajó al espacio.',
