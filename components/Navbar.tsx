@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { COMPANY_INFO } from '@/lib/data';
@@ -19,10 +20,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Quiénes Somos', href: '#quienes-somos' },
-    { name: 'Servicios', href: '#servicios' },
-    { name: 'Portafolio', href: '#portafolio' },
-    { name: 'Contacto', href: '#contacto' },
+    { name: 'Quiénes Somos', href: '/#quienes-somos' },
+    { name: 'Servicios', href: '/#servicios' },
+    { name: 'Portafolio', href: '/#portafolio' },
+    { name: 'Eventos', href: '/eventos/tarde-de-pelicula' },
+    { name: 'Contacto', href: '/#contacto' },
   ];
 
   return (
@@ -36,8 +38,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Brand Official Logo (Agrandado para compensar márgenes de la imagen) */}
-          <a href="#" className="flex items-center group" id="logo-link">
+          {/* Brand Official Logo (Redirige siempre a la portada) */}
+          <Link href="/" className="flex items-center group" id="logo-link">
             <div className="relative h-12 w-48 sm:h-16 sm:w-60">
               <Image
                 src="/logo-header.png"
@@ -47,7 +49,7 @@ export default function Navbar() {
                 priority
               />
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1 bg-[#23262D]/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
