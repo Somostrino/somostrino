@@ -18,6 +18,7 @@ interface Evento {
 }
 
 const EVENTOS_LIST: Evento[] = [
+  // --- PRÓXIMOS EVENTOS ---
   {
     id: 'tarde-de-pelicula',
     title: 'UNA TARDE DE PELÍCULA EN PLAZA VICTORIA',
@@ -26,7 +27,7 @@ const EVENTOS_LIST: Evento[] = [
     description: 'Un concierto íntimo de películas de Disney en formato piano y voz junto a Ennio Ramaciotti y Agustina Sepúlveda.',
     link: 'https://www.portaldisc.com/evento/tarde-de-pelicula',
     image: '/eventos/afiche-tarde-de-pelicula.jpg',
-    customUrl: '/eventos/tarde-de-pelicula', // <-- Redirige a su subpágina dedicada
+    customUrl: '/eventos/tarde-de-pelicula',
   },
   {
     id: 'gamuza-otra-noche-3',
@@ -35,7 +36,7 @@ const EVENTOS_LIST: Evento[] = [
     isoDate: '2026-08-16T16:30:00',
     description: 'Show vespertino de "Otra noche más aquí" en formato íntimo y acústico, esta vez desde Kilombo Bar en Barrio Brasil.',
     link: 'https://www.portaldisc.com/evento/otra-noche-mas-aqui-3',
-    image: '/eventos/posters/plaza-victoria-3.jpg',
+    image: '/eventos/posters/plaza-victoria-3.png',
   },
   {
     id: 'gamuza-otra-noche-2',
@@ -46,6 +47,8 @@ const EVENTOS_LIST: Evento[] = [
     link: 'https://www.portaldisc.com/evento/otra-noche-mas-aqui-2',
     image: '/eventos/posters/plaza-victoria-2.jpg',
   },
+
+  // --- EVENTOS ANTERIORES Y NUEVOS REGISTROS ---
   {
     id: 'gamuza-otra-noche-1',
     title: 'GAMUZA: OTRA NOCHE MÁS AQUÍ EN PLAZA VICTORIA',
@@ -63,6 +66,15 @@ const EVENTOS_LIST: Evento[] = [
     description: 'Estreno oficial del videoclip “Drip” junto a Simplemente Yo y SoloNacho, con proyección exclusiva, shows en vivo e invitados como C-Funk.',
     link: 'https://www.portaldisc.com/evento/drip-simplemente-yo-x-solonacho',
     image: '/eventos/posters/drip-lanzamiento.jpg',
+  },
+  {
+    id: 'gamuza-salamaster-2026',
+    title: 'GAMUZA: CIERRE DE GIRA EN SALA MÁSTER',
+    date: 'Sábado 28 de marzo 2026',
+    isoDate: '2026-03-28T20:00:00',
+    description: 'Gamuza cierra su exitosa gira con una noche memorable en la emblemática Sala Máster de la Universidad de Chile.',
+    link: 'https://portaldisc.com/evento/gamuzaensalamaster',
+    image: '/eventos/posters/gamuza-sala-master.jpg',
   },
   {
     id: 'gamuza-laserena-2',
@@ -83,6 +95,15 @@ const EVENTOS_LIST: Evento[] = [
     image: '/eventos/posters/la-serena-2026.jpg',
   },
   {
+    id: 'gamuza-cinzano-2026',
+    title: 'GAMUZA: EN BAR CINZANO VALPARAÍSO',
+    date: 'Jueves 5 de febrero 2026',
+    isoDate: '2026-02-05T20:00:00',
+    description: 'Valparaíso puerto querido, qué alegría volver para cantar y compartir con ustedes nuestro nuevo show.',
+    link: 'https://www.instagram.com/p/DUGye9Hgatk/',
+    image: '/eventos/posters/gamuza-cinzano.jpg',
+  },
+  {
     id: 'gamuza-valdivia',
     title: 'GAMUZA: LA AMISTAD HECHA BOLERO EN VALDIVIA',
     date: 'Sábado 24 de enero 2026, 19:30 hrs.',
@@ -90,6 +111,24 @@ const EVENTOS_LIST: Evento[] = [
     description: 'En el marco de su gira, Gamuza se presenta en With Love Valdivia en una noche donde las historias compartidas son las protagonistas.',
     link: 'https://www.portaldisc.com/evento/gira-lahb-valdivia-gamuza',
     image: '/eventos/posters/valdivia-2026.jpg',
+  },
+  {
+    id: 'gamuza-bariloche-2026',
+    title: 'GAMUZA: EN CASA MACACHA BARILOCHE',
+    date: 'Domingo 18 de enero 2026',
+    isoDate: '2026-01-18T20:00:00',
+    description: 'La banda chilena Gamuza llega por primera vez fuera de Chile a Bariloche en el marco de su gira. Show íntimo en Casa Macacha.',
+    link: 'https://www.instagram.com/p/DTWJ1Uzjhkm/',
+    image: '/eventos/posters/gamuza-casa-macacha.jpg',
+  },
+  {
+    id: 'gamuza-puerto-varas-2026',
+    title: 'GAMUZA: EN CENTRO DE ARTE MOLINO MACHMAR EN PUERTO VARAS',
+    date: 'Sábado 17 de enero 2026',
+    isoDate: '2026-01-17T20:00:00',
+    description: 'Volvemos a Puerto Varas para compartir con ustedes nuestro nuevo espectáculo en el Centro de Arte Molino Machmar.',
+    link: 'https://www.instagram.com/p/DTNNtp4lZsY/',
+    image: '/eventos/posters/gamuza-puerto-varas.jpg',
   },
   {
     id: 'gamuza-osorno-2026',
@@ -117,6 +156,24 @@ const EVENTOS_LIST: Evento[] = [
     description: 'Gamuza da inicio a su gira presentando en vivo las canciones de su reciente disco en un show íntimo en Gato Loco Bar.',
     link: 'https://www.portaldisc.com/evento/gira-lahb-talca-gamuza',
     image: '/eventos/posters/talca-2026.jpg',
+  },
+  {
+    id: 'gamuza-lanzamiento-gam-2026',
+    title: 'GAMUZA: LANZAMIENTO DE DISCO LA AMISTAD HECHA BOLERO EN GAM',
+    date: 'Miércoles 7 de enero 2026',
+    isoDate: '2026-01-07T20:00:00',
+    description: 'Gamuza llega a GAM para celebrar el lanzamiento oficial de su primer larga duración "La amistad hecha bolero" con banda completa.',
+    link: 'https://gam.cl/es/que-hacer-en-gam/musica-popular/gamuza/',
+    image: '/eventos/posters/gamuza-gam.jpg',
+  },
+  {
+    id: 'simplementeyo-ceira-2025',
+    title: 'SIMPLEMENTE YO: EN ESPACIO CEIRA EN IRARRÁZAVAL',
+    date: 'Viernes 19 de diciembre 2025',
+    isoDate: '2025-12-19T20:00:00',
+    description: 'SIDE SHOWS CONFIRMADOS — FINAL SPOILER 2025. Se suma Simplemente Yo y Soffi con shows especiales para romper el ritmo de la noche.',
+    link: 'https://www.instagram.com/p/DSNZqk8jnmE/',
+    image: '/eventos/posters/simplementeyo-spoiler.jpg',
   },
   {
     id: 'pre-escucha-2',
@@ -182,6 +239,15 @@ const EVENTOS_LIST: Evento[] = [
     image: '/eventos/posters/ramblas-1-2025.jpg',
   },
   {
+    id: 'gamuza-trotamundos-2025',
+    title: 'GAMUZA: EN TERRAZA TROTAMUNDOS EN QUILPUÉ',
+    date: 'Sábado 26 de julio 2025',
+    isoDate: '2025-07-26T20:00:00',
+    description: 'Querida gente de la quinta, ansiosos de poder volver a presentarnos compartiendo parte de lo nuevo que se viene: "Los frutos del invierno".',
+    link: 'https://www.instagram.com/p/DLJCrDoMyWq/',
+    image: '/eventos/posters/gamuza-trotamundos.jpg',
+  },
+  {
     id: 'gamuza-rancagua-2',
     title: 'GAMUZA EN RANCAGUA: EL VIEJO RANCAGUA',
     date: 'Jueves 24 de julio 2025, 20:00 hrs.',
@@ -236,6 +302,15 @@ const EVENTOS_LIST: Evento[] = [
     image: '/eventos/posters/la-serena-2025.jpg',
   },
   {
+    id: 'gamuza-crapula-2025',
+    title: 'GAMUZA: EN BAR CRÁPULA EN CONCEPCIÓN',
+    date: 'Jueves 13 de febrero 2025',
+    isoDate: '2025-02-13T20:00:00',
+    description: 'Los boleros se toman el Bar Crápula en Concepción para compartir una noche inolvidable en el sur de Chile.',
+    link: 'https://www.instagram.com/p/DF-tZX4xnIU/',
+    image: '/eventos/posters/gamuza-crapula.jpg',
+  },
+  {
     id: 'gamuza-osorno-2025',
     title: 'GAMUZA EN OSORNO: TABERNA PIRATA',
     date: 'Miércoles 12 de febrero 2025, 21:00 hrs.',
@@ -245,6 +320,15 @@ const EVENTOS_LIST: Evento[] = [
     image: '/eventos/posters/osorno-2025.jpg',
   },
   {
+    id: 'gamuza-jardinera-2025',
+    title: 'GAMUZA: EN LA JARDINERA EN PUCÓN',
+    date: 'Sábado 8 de febrero 2025',
+    isoDate: '2025-02-08T20:00:00',
+    description: 'Tendremos en nuestra querida Jardinera al trío de voces, guitarras y percusiones, interpretando lo mejor del bolero.',
+    link: 'https://share.google/Eq6XuEFYFEOxAsQRZ',
+    image: '/eventos/posters/gamuza-jardinera.jpg',
+  },
+  {
     id: 'gamuza-temuco-2025',
     title: 'GAMUZA EN TEMUCO: LA PERRERA',
     date: 'Viernes 7 de febrero 2025, 20:00 hrs.',
@@ -252,6 +336,105 @@ const EVENTOS_LIST: Evento[] = [
     description: 'Gamuza llega a Temuco con su inconfundible estilo para regalar una velada inolvidable llena de boleros y emociones en el Bar La Perrera.',
     link: 'https://www.portaldisc.com/evento/gamuzaenlaperrera',
     image: '/eventos/posters/temuco-2025.jpg',
+  },
+  {
+    id: 'olivia-scd-2024',
+    title: 'OLIVIA GARCÍA: CONCIERTO UN NUEVO REFUGIO EN SALA SCD',
+    date: 'Domingo 8 de septiembre 2024',
+    isoDate: '2024-09-08T20:00:00',
+    description: 'Concierto preparado con mucho amor y dedicación en banda completa para presentar "Un Nuevo Refugio" en Sala SCD.',
+    link: 'https://www.instagram.com/p/C-lovdKpwiZ/',
+    image: '/eventos/posters/olivia-sala-scd.jpg',
+  },
+  {
+    id: 'muchacho-padre-2024',
+    title: 'MUCHACHO DE LUNA: EN CENTRO CULTURAL DE PADRE LAS CASAS',
+    date: 'Jueves 22 de agosto 2024',
+    isoDate: '2024-08-22T20:00:00',
+    description: 'Propuesta minimalista y ascética que busca el clima de esa Andalucía del llano ardiente y mágica donde la luna ilumina el amor.',
+    link: 'https://www.instagram.com/p/C-2fcqiR7gX/',
+    image: '/eventos/posters/muchacho-padre.jpg',
+  },
+  {
+    id: 'olivia-crapula-2024',
+    title: 'OLIVIA GARCÍA: EN BAR CRÁPULA EN CONCEPCIÓN',
+    date: 'Sábado 20 de julio 2024',
+    isoDate: '2024-07-20T20:00:00',
+    description: 'Concierto por primera vez en Concepción, anticipando el esperado estreno de Un Nuevo Refugio.',
+    link: 'https://www.instagram.com/p/C9kmMFTJDFn/',
+    image: '/eventos/posters/olivia-concepcion.jpg',
+  },
+  {
+    id: 'olivia-chillan-2024',
+    title: 'OLIVIA GARCÍA: EN LATINOS BAR EN CHILLÁN',
+    date: 'Viernes 19 de julio 2024',
+    isoDate: '2024-07-19T20:00:00',
+    description: 'Concierto por primera vez en Chillán, anticipando el estreno de Un Nuevo Refugio.',
+    link: 'https://www.instagram.com/p/C9cwoEgJV2u/',
+    image: '/eventos/posters/olivia-chillan.jpg',
+  },
+  {
+    id: 'he-nacido-uc-2024',
+    title: 'HE NACIDO PARA VERTE SONREÍR: EN TEATRO UC EN ÑUÑOA',
+    date: 'Del 02 al 06 de enero 2024',
+    isoDate: '2024-01-06T20:00:00',
+    description: 'La sensible pieza de Santiago Loza bajo la dirección de Paulo Brunetti, con actuaciones de Blanca Lewin y Bernabé Madrigal.',
+    link: 'https://teatrouc.uc.cl/evento/he-nacido-para-verte-sonreir-exitos-teatrales-3/',
+    image: '/eventos/posters/he-nacido-uc.jpg',
+  },
+  {
+    id: 'olivia-guada-master-2023',
+    title: 'OLIVIA GARCÍA + GUADA: EN SALA MÁSTER U. DE CHILE',
+    date: 'Miércoles 29 de noviembre 2023',
+    isoDate: '2023-11-29T20:00:00',
+    description: 'Noche especial compartiendo escenario con grandes referentes de la música en un recinto emblemático.',
+    link: 'https://portaldisc.com/evento/guadayoliviagarciaensalamaster',
+    image: '/eventos/posters/olivia-sala-master.jpg',
+  },
+  {
+    id: 'dani-abarza-ummo-2023',
+    title: 'DANI ABARZA: EN BAR UMMO EN PROVIDENCIA',
+    date: 'Viernes 4 de agosto 2023',
+    isoDate: '2023-08-04T20:00:00',
+    description: 'Evento especial de despedida en Bar Ummo Providencia, acompañada por Olivia García y amigos artistas.',
+    link: 'https://portaldisc.com/evento/despedida-dani-abarza',
+    image: '/eventos/posters/dani-abarza-ummo.jpg',
+  },
+  {
+    id: 'he-nacido-puertomontt-2023',
+    title: 'HE NACIDO PARA VERTE SONREÍR: EN TEATRO DIEGO RIVERA PUERTO MONTT',
+    date: 'Lunes 17 de julio 2023',
+    isoDate: '2023-07-17T20:00:00',
+    description: 'Montaje protagonizado por Blanca Lewin y Bernabé Madrigal en los Temporales Internacionales de Teatro de Puerto Montt.',
+    link: 'https://teatrodiegorivera.cl/cartelera/temporales-teatrales-presenta-he-nacido',
+    image: '/eventos/posters/he-nacido-puerto-montt.jpg',
+  },
+  {
+    id: 'he-nacido-mori-2023',
+    title: 'HE NACIDO PARA VERTE SONREÍR: EN TEATRO MORI EN RECOLETA',
+    date: 'Del 05 al 28 de mayo 2023',
+    isoDate: '2023-05-28T20:00:00',
+    description: 'Una obra lacerante, profunda y de gran carga poética sobre las formas de la locura y el enigma del ser humano.',
+    link: 'https://www.ticketmaster.cl/event/he-nacido-para-verte-sonreir-recoleta',
+    image: '/eventos/posters/he-nacido-mori.jpg',
+  },
+  {
+    id: 'he-nacido-finis-2023',
+    title: 'HE NACIDO PARA VERTE SONREÍR: EN TEATRO FINIS TERRAE',
+    date: 'Del 11 al 14 de enero 2023',
+    isoDate: '2023-01-14T20:00:00',
+    description: 'El monólogo de la madre transcurre entre la melancolía y la tristeza con un humor secreto necesario para soportar el dolor.',
+    link: 'https://teatrofinisterrae.cl/evento/he-nacido-para-verte-sonreir/',
+    image: '/eventos/posters/he-nacido-finis-terrae.jpg',
+  },
+  {
+    id: 'muchacho-rancagua-2022',
+    title: 'MUCHACHO DE LUNA: EN TEATRO CASA DEL ARTE EN RANCAGUA',
+    date: 'Del 3 al 5 de marzo 2022',
+    isoDate: '2022-03-05T20:00:00',
+    description: 'Obra aplaudida con más de 120 funciones, realizada con éxito de crítica en Chile y Argentina.',
+    link: 'https://www.facebook.com/photo?fbid=350369967106362',
+    image: '/eventos/posters/muchacho-rancagua.jpg',
   },
 ];
 
@@ -303,7 +486,6 @@ export default function EventosPage() {
 
     const commonClasses = `group relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#1B1D21] ${borderClass} transition-all duration-300 hover:-translate-y-1 text-left cursor-pointer block`;
 
-    // Si tiene subpágina propia redirige, si no, abre el modal
     if (evento.customUrl) {
       return (
         <a key={evento.id} href={evento.customUrl} className={commonClasses}>
@@ -424,7 +606,7 @@ export default function EventosPage() {
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#C2FF01] text-[#1B1D21] font-black text-sm hover:bg-[#b0eb00] transition-all shadow-[0_0_20px_rgba(194,255,1,0.3)]"
                   >
                     <Ticket className="w-4 h-4" />
-                    <span>IR A PORTALTICKETS</span>
+                    <span>MÁS INFORMACIÓN</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>
