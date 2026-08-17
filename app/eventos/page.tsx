@@ -36,7 +36,7 @@ const EVENTOS_LIST: Evento[] = [
     isoDate: '2026-08-16T16:30:00',
     description: 'Show vespertino de "Otra noche más aquí" en formato íntimo y acústico, esta vez desde Kilombo Bar en Barrio Brasil.',
     link: 'https://www.portaldisc.com/evento/otra-noche-mas-aqui-3',
-    image: '/eventos/posters/plaza-victoria-3.png',
+    image: '/eventos/posters/plaza-victoria-3.jpg',
   },
   {
     id: 'gamuza-otra-noche-2',
